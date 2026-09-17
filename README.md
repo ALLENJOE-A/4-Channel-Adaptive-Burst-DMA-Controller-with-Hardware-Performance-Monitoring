@@ -1,0 +1,2 @@
+# 4-Channel-Adaptive-Burst-DMA-Controller-with-Hardware-Performance-Monitoring
+Pure Verilog RTL implementation of a 4-channel DMA controller featuring round-robin arbitration, configurable 1/4/8/16-word bursts, burst-utilization-based adaptive burst selection, and hardware performance monitoring. Includes comprehensive functional verification, stress testing, and ASIC-oriented synthesis readiness.
