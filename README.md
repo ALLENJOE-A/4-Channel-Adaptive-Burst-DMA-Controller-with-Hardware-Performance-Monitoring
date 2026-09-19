@@ -391,6 +391,15 @@ vlog -work simulation/work rtl/dma_final.v tb/tb_dma_final.v
 vsim -batch -do "run -all; quit -f" -lib simulation/work tb_dma_final
 ```
 
+## Author
+
+**Allen Joe A**
+
+
+B.Tech Electronics and VLSI Engineering
+
+Vellore Institute of Technology, Chennai
+
 ---
 
 ## License
