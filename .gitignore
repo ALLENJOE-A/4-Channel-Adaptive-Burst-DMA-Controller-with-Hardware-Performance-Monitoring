@@ -1,28 +1,20 @@
 # ============================================================
 # 4-Channel Adaptive Burst DMA Controller
-# Git Ignore
+# .gitignore
 # ============================================================
 
 # ------------------------------------------------------------
-# Simulation / Verilog temporary files
+# Simulation artifacts (generated at runtime)
 # ------------------------------------------------------------
-*.log
-*.jou
-*.pb
-*.wlf
 *.vcd
 *.vpd
 *.fsdb
+*.fst
+*.ghw
+*.wlf
 *.shm
 *.trn
-*.dsn
-*.sim
-*.history
-*.key
-*.bak
-*.tmp
-*.swp
-*.swo
+dump.vcd
 
 # ------------------------------------------------------------
 # ModelSim / Questa
@@ -30,23 +22,17 @@
 work/
 transcript
 modelsim.ini
-*.wlf
 vsim.wlf
+*.wlf
 
 # ------------------------------------------------------------
-# Cadence NC-Verilog / NCLaunch
+# Cadence
 # ------------------------------------------------------------
 INCA_libs/
 *.sv~
 *.v~
-*.log
-*.err
-*.out
-*.history
 waves/
 waves.shm/
-*.shm/
-*.trn/
 
 # ------------------------------------------------------------
 # Synopsys
@@ -55,17 +41,7 @@ waves.shm/
 *.mr
 *.pvl
 *.synopsys
-*.sdf
-*.sdc
 *.ddc
-
-# ------------------------------------------------------------
-# Cadence Genus
-# ------------------------------------------------------------
-*.genus
-genus/
-*.rpt
-*.report
 
 # ------------------------------------------------------------
 # Vivado / Xilinx
@@ -78,23 +54,19 @@ vivado/
 *.hw/
 *.ip_user_files/
 *.sim/
-*.jou
-*.str
 
 # ------------------------------------------------------------
-# Quartus
+# Quartus (generated build artifacts)
 # ------------------------------------------------------------
 db/
 incremental_db/
-*.qpf
-*.qsf
 *.sof
 *.pof
-*.rpt
-*.summary
+greybox_tmp/
+*.qws
 
 # ------------------------------------------------------------
-# FPGA / synthesis generated files
+# FPGA bitstream / netlist
 # ------------------------------------------------------------
 *.bit
 *.bin
@@ -104,21 +76,6 @@ incremental_db/
 *.edf
 *.ngc
 *.ngd
-*.map
-*.par
-*.pcf
-
-# ------------------------------------------------------------
-# Waveform / debug databases
-# ------------------------------------------------------------
-*.vcd
-*.vpd
-*.fst
-*.ghw
-*.wlf
-*.fsdb
-*.shm
-*.trn
 
 # ------------------------------------------------------------
 # Coverage databases
@@ -130,26 +87,22 @@ cov/
 *.cdb
 
 # ------------------------------------------------------------
-# Generated synthesis / implementation reports
-# ------------------------------------------------------------
-reports/
-results/
-output/
-outputs/
-synthesis/
-netlist/
-timing/
-power/
-ppa/
-
-# ------------------------------------------------------------
-# Temporary build directories
+# Temporary / build
 # ------------------------------------------------------------
 build/
 dist/
 tmp/
 temp/
-.cache/
+*.bak
+*.tmp
+*.swp
+*.swo
+*.log
+*.jou
+*.pb
+*.key
+*.history
+*.err
 
 # ------------------------------------------------------------
 # OS generated files
@@ -166,7 +119,7 @@ Desktop.ini
 *.code-workspace
 
 # ------------------------------------------------------------
-# Python cache (if scripts are added later)
+# Python cache
 # ------------------------------------------------------------
 __pycache__/
 *.pyc
@@ -175,9 +128,8 @@ __pycache__/
 venv/
 
 # ------------------------------------------------------------
-# Keep important project files
+# Simulation binaries (iverilog output)
 # ------------------------------------------------------------
-!.gitignore
-!README.md
-!*.v
-!docs/
+dma_sim
+dma_sim.exe
+a.out
