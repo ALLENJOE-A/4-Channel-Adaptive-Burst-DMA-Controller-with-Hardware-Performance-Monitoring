@@ -1,0 +1,412 @@
+# vsim -batch -do "run -all; quit -f" -lib C:\Users\user\AppData\Local\Temp\opencode\dma_sim\work tb_dma_final 
+# Start time: 13:46:34 on Sep 19,2026
+# Loading C:\Users\user\AppData\Local\Temp\opencode\dma_sim\work.tb_dma_final
+# Loading C:\Users\user\AppData\Local\Temp\opencode\dma_sim\work.dma_final
+# Loading C:\Users\user\AppData\Local\Temp\opencode\dma_sim\work.dma_channel_final
+# Loading C:\Users\user\AppData\Local\Temp\opencode\dma_sim\work.dma_arbiter_final
+# 
+# run -all
+# 
+# ============================================================
+#   FINAL 4-CHANNEL ADAPTIVE BURST DMA VERIFICATION SUITE
+# ============================================================
+# 
+# 
+# --- 1. SINGLE-CHANNEL TRANSFERS ---
+#   CH0 DONE (after 3 cycles)
+#   PASS [CH0-Only] All 8 words verified accurately
+#   CH1 DONE (after 3 cycles)
+#   PASS [CH1-Only] All 8 words verified accurately
+#   CH2 DONE (after 3 cycles)
+#   PASS [CH2-Only] All 8 words verified accurately
+#   CH3 DONE (after 3 cycles)
+#   PASS [CH3-Only] All 8 words verified accurately
+# 
+# --- 2. MULTI-CHANNEL CONCURRENT TRANSFERS ---
+#   CH0 DONE (after 9 cycles)
+# CH0: Burst 4 -> 8 (Efficiency score crossed threshold)
+# CH1: Burst 4 -> 8 (Efficiency score crossed threshold)
+#   CH1 DONE (after 2 cycles)
+#   PASS [H0+CH1-CH0] All 16 words verified accurately
+#   PASS [H0+CH1-CH1] All 16 words verified accurately
+#   CH0 DONE (after 6 cycles)
+#   CH2 DONE (after 4 cycles)
+#   PASS [H0+CH2-CH0] All 16 words verified accurately
+#   PASS [H0+CH2-CH2] All 16 words verified accurately
+# CH2: Burst 4 -> 8 (Efficiency score crossed threshold)
+#   CH0 DONE (after 6 cycles)
+# CH3: Burst 4 -> 8 (Efficiency score crossed threshold)
+#   CH3 DONE (after 4 cycles)
+#   PASS [H0+CH3-CH0] All 16 words verified accurately
+#   PASS [H0+CH3-CH3] All 16 words verified accurately
+#   CH1 DONE (after 8 cycles)
+#   CH2 DONE (after 2 cycles)
+#   PASS [H1+CH2-CH1] All 16 words verified accurately
+#   PASS [H1+CH2-CH2] All 16 words verified accurately
+#   CH1 DONE (after 8 cycles)
+#   CH3 DONE (after 2 cycles)
+#   PASS [H1+CH3-CH1] All 16 words verified accurately
+#   PASS [H1+CH3-CH3] All 16 words verified accurately
+#   CH2 DONE (after 8 cycles)
+#   CH3 DONE (after 2 cycles)
+#   PASS [H2+CH3-CH2] All 16 words verified accurately
+#   PASS [H2+CH3-CH3] All 16 words verified accurately
+# CH0: Burst 8 -> 16 (Efficiency score crossed threshold)
+# CH1: Burst 8 -> 16 (Efficiency score crossed threshold)
+# CH2: Burst 8 -> 16 (Efficiency score crossed threshold)
+# CH3: Burst 8 -> 16 (Efficiency score crossed threshold)
+#   CH0 DONE (after 24 cycles)
+#   CH1 DONE (after 5 cycles)
+#   CH2 DONE (after 5 cycles)
+#   CH3 DONE (after 5 cycles)
+#   PASS [All4-CH0] All 32 words verified accurately
+#   PASS [All4-CH1] All 32 words verified accurately
+#   PASS [All4-CH2] All 32 words verified accurately
+#   PASS [All4-CH3] All 32 words verified accurately
+# 
+# --- 3. BURST SIZE TESTS ---
+# CH0: Burst 16 -> 1 (Efficiency score crossed threshold)
+# CH0: Burst 1 -> 4 (Efficiency score crossed threshold)
+#   CH0 DONE (after 4 cycles)
+#   PASS [Burst-1] All 8 words verified accurately
+#   CH0 DONE (after 6 cycles)
+#   PASS [Burst-4] All 16 words verified accurately
+# CH0: Burst 4 -> 8 (Efficiency score crossed threshold)
+#   CH0 DONE (after 6 cycles)
+#   PASS [Burst-8] All 16 words verified accurately
+# CH0: Burst 8 -> 16 (Efficiency score crossed threshold)
+#   CH0 DONE (after 11 cycles)
+#   PASS [Burst-16] All 32 words verified accurately
+# CH0: Burst 16 -> 1 (Efficiency score crossed threshold)
+# CH1: Burst 16 -> 4 (Efficiency score crossed threshold)
+# CH2: Burst 16 -> 8 (Efficiency score crossed threshold)
+# CH0: Burst 1 -> 4 (Efficiency score crossed threshold)
+#   CH0 DONE (after 20 cycles)
+#   CH1 DONE (after 0 cycles)
+#   CH2 DONE (after 0 cycles)
+#   CH3 DONE (after 0 cycles)
+#   PASS [dBurst-CH0] All 16 words verified accurately
+#   PASS [dBurst-CH1] All 16 words verified accurately
+#   PASS [dBurst-CH2] All 16 words verified accurately
+#   PASS [dBurst-CH3] All 16 words verified accurately
+# 
+# --- 4. EXHAUSTIVE TRANSFER LENGTH TESTS ---
+#   CH0 DONE (after 1 cycles)
+#   PASS: Transfer Length 1 verified exactly (0 overruns)
+#   CH0 DONE (after 1 cycles)
+#   PASS: Transfer Length 2 verified exactly (0 overruns)
+# CH0: Burst 4 -> 1 (Efficiency score crossed threshold)
+#   CH0 DONE (after 2 cycles)
+#   PASS: Transfer Length 3 verified exactly (0 overruns)
+#   CH0 DONE (after 2 cycles)
+#   PASS: Transfer Length 4 verified exactly (0 overruns)
+# CH0: Burst 1 -> 4 (Efficiency score crossed threshold)
+#   CH0 DONE (after 3 cycles)
+#   PASS: Transfer Length 5 verified exactly (0 overruns)
+#   CH0 DONE (after 3 cycles)
+#   PASS: Transfer Length 7 verified exactly (0 overruns)
+#   CH0 DONE (after 3 cycles)
+#   PASS: Transfer Length 8 verified exactly (0 overruns)
+#   CH0 DONE (after 4 cycles)
+#   PASS: Transfer Length 9 verified exactly (0 overruns)
+#   CH0 DONE (after 6 cycles)
+#   PASS: Transfer Length 15 verified exactly (0 overruns)
+#   CH0 DONE (after 6 cycles)
+#   PASS: Transfer Length 16 verified exactly (0 overruns)
+# CH0: Burst 4 -> 8 (Efficiency score crossed threshold)
+#   CH0 DONE (after 6 cycles)
+#   PASS: Transfer Length 17 verified exactly (0 overruns)
+#   CH0 DONE (after 11 cycles)
+#   PASS: Transfer Length 31 verified exactly (0 overruns)
+#   CH0 DONE (after 11 cycles)
+#   PASS: Transfer Length 32 verified exactly (0 overruns)
+# CH0: Burst 8 -> 16 (Efficiency score crossed threshold)
+#   CH0 DONE (after 11 cycles)
+#   PASS: Transfer Length 33 verified exactly (0 overruns)
+#   CH0 DONE (after 21 cycles)
+#   PASS: Transfer Length 63 verified exactly (0 overruns)
+#   CH0 DONE (after 21 cycles)
+#   PASS: Transfer Length 64 verified exactly (0 overruns)
+#   CH0 DONE (after 21 cycles)
+#   PASS: Transfer Length 65 verified exactly (0 overruns)
+#   CH0 DONE (after 41 cycles)
+#   PASS: Transfer Length 127 verified exactly (0 overruns)
+#   CH0 DONE (after 41 cycles)
+#   PASS: Transfer Length 128 verified exactly (0 overruns)
+#   CH0 DONE (after 82 cycles)
+#   PASS: Transfer Length 255 verified exactly (0 overruns)
+#   CH0 DONE (after 82 cycles)
+#   PASS: Transfer Length 256 verified exactly (0 overruns)
+#   CH0 DONE (after 163 cycles)
+#   PASS: Transfer Length 512 verified exactly (0 overruns)
+# 
+# --- 5. CORNER-CASE TESTS ---
+# CH0: Burst 16 -> 4 (Efficiency score crossed threshold)
+#   CH0 DONE (after 1 cycles)
+#   PASS: Length = 1 corner case (no overrun)
+# CH0: Burst 4 -> 16 (Efficiency score crossed threshold)
+#   CH0 DONE (after 2 cycles)
+#   PASS: Length < burst size (len=3, burst=16: capped to 3 words)
+#   CH0 DONE (after 6 cycles)
+#   PASS [Len==Burst] All 16 words verified accurately
+#   CH0 DONE (after 6 cycles)
+#   PASS [n==Burst+1] All 17 words verified accurately
+# 
+# --- 6. ADDRESS TESTING & INCREMENTS ---
+#   CH0 DONE (after 6 cycles)
+#   PASS [ddr-Offset] All 16 words verified accurately
+#   CH0 DONE (after 3 cycles)
+#   PASS [r-Boundary] All 8 words verified accurately
+#   PASS: Deterministic address increment (+4 bytes per word) verified
+# 
+# --- 7. DATA INTEGRITY PATTERNS ---
+#   CH0 DONE (after 6 cycles)
+#   PASS: Fixed patterns (0x00, 0xFF, 0xAA, 0x55) verified
+#   CH0 DONE (after 6 cycles)
+#   PASS: Alternating channel-specific pattern verified
+# 
+# --- 8. ADAPTIVE BURST VERIFICATION ---
+# CH0: Burst 16 -> 4 (Efficiency score crossed threshold)
+# CH0: Burst 4 -> 8 (Efficiency score crossed threshold)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+# CH0: Burst 8 -> 16 (Efficiency score crossed threshold)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   CH0 DONE (after 11 cycles)
+#   PASS: Adaptive UP verified (4 -> 16 words)
+# CH0: Burst 16 -> 4 (Efficiency score crossed threshold)
+#   CH0 DONE (after 1 cycles)
+#   CH0 DONE (after 1 cycles)
+#   CH0 DONE (after 1 cycles)
+# CH0: Burst 4 -> 1 (Efficiency score crossed threshold)
+#   CH0 DONE (after 2 cycles)
+#   CH0 DONE (after 2 cycles)
+# CH0: Burst 1 -> 4 (Efficiency score crossed threshold)
+#   CH0 DONE (after 2 cycles)
+#   CH0 DONE (after 1 cycles)
+#   CH0 DONE (after 1 cycles)
+#   CH0 DONE (after 1 cycles)
+# CH0: Burst 4 -> 1 (Efficiency score crossed threshold)
+#   CH0 DONE (after 2 cycles)
+#   CH0 DONE (after 2 cycles)
+# CH0: Burst 1 -> 4 (Efficiency score crossed threshold)
+#   CH0 DONE (after 2 cycles)
+#   CH0 DONE (after 1 cycles)
+#   CH0 DONE (after 1 cycles)
+#   CH0 DONE (after 1 cycles)
+#   PASS: Adaptive DOWN verified (4 -> 1 words)
+#   PASS: Saturation bounds strictly respected (Burst level = 1 in [1, 16])
+#   PASS: Boundary rule verified (0 burst size modifications during active bursts)
+# 
+# --- 9. INDEPENDENT CHANNEL ADAPTATION ---
+# CH0: Burst 1 -> 4 (Efficiency score crossed threshold)
+#   CH1 DONE (after 1 cycles)
+#   CH1 DONE (after 2 cycles)
+#   CH1 DONE (after 2 cycles)
+# CH1: Burst 4 -> 1 (Efficiency score crossed threshold)
+# CH0: Burst 4 -> 8 (Efficiency score crossed threshold)
+#   CH1 DONE (after 5 cycles)
+#   CH1 DONE (after 6 cycles)
+# CH1: Burst 1 -> 4 (Efficiency score crossed threshold)
+#   CH1 DONE (after 5 cycles)
+# CH0: Burst 8 -> 16 (Efficiency score crossed threshold)
+#   CH1 DONE (after 2 cycles)
+#   CH1 DONE (after 5 cycles)
+# CH1: Burst 4 -> 1 (Efficiency score crossed threshold)
+#   CH1 DONE (after 5 cycles)
+#   CH1 DONE (after 7 cycles)
+#   CH1 DONE (after 2 cycles)
+# CH1: Burst 1 -> 4 (Efficiency score crossed threshold)
+#   CH1 DONE (after 2 cycles)
+#   CH1 DONE (after 1 cycles)
+#   CH1 DONE (after 1 cycles)
+#   CH1 DONE (after 1 cycles)
+#   CH0 DONE (after 0 cycles)
+#   PASS: Independent adaptation confirmed: CH0 adapted UP (4->16), CH1 adapted DOWN (4->1)
+# 
+# --- 10. ROUND-ROBIN FAIRNESS & STARVATION TEST ---
+#   CH0 DONE (after 16 cycles)
+# CH2: Burst 8 -> 16 (Efficiency score crossed threshold)
+# CH1: Burst 1 -> 4 (Efficiency score crossed threshold)
+# CH1: Burst 4 -> 8 (Efficiency score crossed threshold)
+#   CH1 DONE (after 24 cycles)
+#   CH2 DONE (after 0 cycles)
+#   CH3 DONE (after 0 cycles)
+#   PASS: Round-robin fairness confirmed (CH0=32, CH1=32, CH2=32, CH3=32 words, zero starvation)
+#   PASS [RR-CH0] All 32 words verified accurately
+#   PASS [RR-CH1] All 32 words verified accurately
+#   PASS [RR-CH2] All 32 words verified accurately
+#   PASS [RR-CH3] All 32 words verified accurately
+# 
+# --- 11. PMU HARDWARE COUNTER AUDIT & CLEAR TEST ---
+#   PASS: PMU Clear successfully resets busy_cycles to 0
+#   CH0 DONE (after 5 cycles)
+#   CH1 DONE (after 5 cycles)
+#   PASS: PMU Invariants verified: total_words (32) == sum(ch_words) (32)
+#   PASS: total_bursts (3) == sum(ch_bursts) (3), total_grants (3) >= bursts
+# 
+# --- 12. MULTI-CHANNEL CONCURRENT STRESS TEST ---
+#   CH0 DONE (after 56 cycles)
+# CH1: Burst 8 -> 16 (Efficiency score crossed threshold)
+#   CH1 DONE (after 23 cycles)
+#   CH2 DONE (after 0 cycles)
+#   CH3 DONE (after 0 cycles)
+#   PASS [Stress-CH0] All 64 words verified accurately
+#   PASS [Stress-CH1] All 64 words verified accurately
+#   PASS [Stress-CH2] All 64 words verified accurately
+#   PASS [Stress-CH3] All 64 words verified accurately
+#   PASS: Multi-channel stress test complete (256 words concurrent, zero corruption, zero deadlock)
+# 
+# --- 13. RUNNING MULTI-SIZE BENCHMARKS (32, 64, 128, 256, 512 words) ---
+# CH0: Burst 16 -> 4 (Efficiency score crossed threshold)
+# CH1: Burst 16 -> 4 (Efficiency score crossed threshold)
+# CH2: Burst 16 -> 4 (Efficiency score crossed threshold)
+# CH3: Burst 16 -> 4 (Efficiency score crossed threshold)
+#   CH0 DONE (after 7 cycles)
+#   CH1 DONE (after 1 cycles)
+#   CH2 DONE (after 1 cycles)
+#   CH3 DONE (after 2 cycles)
+#   CH0 DONE (after 7 cycles)
+#   CH1 DONE (after 1 cycles)
+#   CH2 DONE (after 1 cycles)
+#   CH3 DONE (after 2 cycles)
+#   CH0 DONE (after 18 cycles)
+#   CH1 DONE (after 1 cycles)
+#   CH2 DONE (after 2 cycles)
+#   CH3 DONE (after 1 cycles)
+#   CH0 DONE (after 18 cycles)
+#   CH1 DONE (after 1 cycles)
+#   CH2 DONE (after 2 cycles)
+#   CH3 DONE (after 1 cycles)
+#   CH0 DONE (after 40 cycles)
+#   CH1 DONE (after 1 cycles)
+#   CH2 DONE (after 2 cycles)
+#   CH3 DONE (after 1 cycles)
+# CH0: Burst 4 -> 8 (Efficiency score crossed threshold)
+# CH1: Burst 4 -> 8 (Efficiency score crossed threshold)
+# CH2: Burst 4 -> 8 (Efficiency score crossed threshold)
+# CH3: Burst 4 -> 8 (Efficiency score crossed threshold)
+#   CH0 DONE (after 36 cycles)
+#   CH1 DONE (after 2 cycles)
+#   CH2 DONE (after 3 cycles)
+#   CH3 DONE (after 2 cycles)
+# CH0: Burst 8 -> 4 (Efficiency score crossed threshold)
+# CH1: Burst 8 -> 4 (Efficiency score crossed threshold)
+# CH2: Burst 8 -> 4 (Efficiency score crossed threshold)
+# CH3: Burst 8 -> 4 (Efficiency score crossed threshold)
+#   CH0 DONE (after 84 cycles)
+#   CH1 DONE (after 2 cycles)
+#   CH2 DONE (after 1 cycles)
+#   CH3 DONE (after 1 cycles)
+# CH0: Burst 4 -> 8 (Efficiency score crossed threshold)
+# CH1: Burst 4 -> 8 (Efficiency score crossed threshold)
+# CH2: Burst 4 -> 8 (Efficiency score crossed threshold)
+# CH3: Burst 4 -> 8 (Efficiency score crossed threshold)
+#   CH0 DONE (after 78 cycles)
+#   CH1 DONE (after 2 cycles)
+#   CH2 DONE (after 3 cycles)
+#   CH3 DONE (after 2 cycles)
+# CH0: Burst 8 -> 4 (Efficiency score crossed threshold)
+# CH1: Burst 8 -> 4 (Efficiency score crossed threshold)
+# CH2: Burst 8 -> 4 (Efficiency score crossed threshold)
+# CH3: Burst 8 -> 4 (Efficiency score crossed threshold)
+#   CH0 DONE (after 173 cycles)
+#   CH1 DONE (after 1 cycles)
+#   CH2 DONE (after 2 cycles)
+#   CH3 DONE (after 1 cycles)
+# CH0: Burst 4 -> 8 (Efficiency score crossed threshold)
+# CH1: Burst 4 -> 8 (Efficiency score crossed threshold)
+# CH2: Burst 4 -> 8 (Efficiency score crossed threshold)
+# CH3: Burst 4 -> 8 (Efficiency score crossed threshold)
+# CH0: Burst 8 -> 16 (Efficiency score crossed threshold)
+# CH1: Burst 8 -> 16 (Efficiency score crossed threshold)
+# CH2: Burst 8 -> 16 (Efficiency score crossed threshold)
+# CH3: Burst 8 -> 16 (Efficiency score crossed threshold)
+#   CH0 DONE (after 159 cycles)
+#   CH1 DONE (after 3 cycles)
+#   CH2 DONE (after 3 cycles)
+#   CH3 DONE (after 2 cycles)
+# 
+# ============================================================
+# DMA BENCHMARK PERFORMANCE RESULTS
+# ============================================================
+# 
+# Transfer | Baseline Cycles | Adaptive Cycles | Cycle Improvement
+# ---------|-----------------|-----------------|------------------
+# 32       | 160             | 160             | 0.00%
+# 64       | 303             | 303             | 0.00%
+# 128      | 589             | 576             | 2.21%
+# 256      | 1161            | 1122            | 3.36%
+# 512      | 2318            | 2188            | 5.61%
+# 
+# Transfer | Fixed Bursts | Adaptive Bursts | Reduction
+# ---------|--------------|-----------------|----------
+# 32       | 8            | 8               | 0.00%
+# 64       | 16           | 16              | 0.00%
+# 128      | 32           | 28              | 12.50%
+# 256      | 64           | 44              | 31.25%
+# 512      | 128          | 64              | 50.00%
+# 
+# Transfer | Fixed Grants | Adaptive Grants | Reduction
+# ---------|--------------|-----------------|----------
+# 32       | 8            | 8               | 0.00%
+# 64       | 16           | 16              | 0.00%
+# 128      | 32           | 28              | 12.50%
+# 256      | 64           | 44              | 31.25%
+# 512      | 128          | 64              | 50.00%
+# 
+# Detailed Metrics Breakdown:
+# Workload | Mode     | Cycles | Busy Cyc | Words | Bursts | Grants | Cyc/Word | Words/Burst | Grants/Word | Words/BusyCyc
+# ---------|----------|--------|----------|-------|--------|--------|----------|-------------|-------------|--------------
+# 32       | Baseline | 160    | 128      | 32    | 8      | 8      | 5.00     | 4.00        | 0.25        | 0.25
+# 32       | Adaptive | 160    | 128      | 32    | 8      | 8      | 5.00     | 4.00        | 0.25        | 0.25
+# 64       | Baseline | 303    | 256      | 64    | 16     | 16     | 4.73     | 4.00        | 0.25        | 0.25
+# 64       | Adaptive | 303    | 256      | 64    | 16     | 16     | 4.73     | 4.00        | 0.25        | 0.25
+# 128      | Baseline | 589    | 512      | 128   | 32     | 32     | 4.60     | 4.00        | 0.25        | 0.25
+# 128      | Adaptive | 576    | 512      | 128   | 28     | 28     | 4.50     | 4.57        | 0.22        | 0.25
+# 256      | Baseline | 1161   | 1024     | 256   | 64     | 64     | 4.54     | 4.00        | 0.25        | 0.25
+# 256      | Adaptive | 1122   | 1024     | 256   | 44     | 44     | 4.38     | 5.82        | 0.17        | 0.25
+# 512      | Baseline | 2318   | 2048     | 512   | 128    | 128    | 4.53     | 4.00        | 0.25        | 0.25
+# 512      | Adaptive | 2188   | 2048     | 512   | 64     | 64     | 4.27     | 8.00        | 0.13        | 0.25
+# 
+# ================================================
+# DMA FINAL VERIFICATION SUMMARY
+# ================================================
+# 
+# Total Tests   : 6266
+# PASS          : 964
+# FAIL          : 0
+# Errors        : 0
+# 
+# Functional Tests      : PASS
+# Burst Tests           : PASS
+# Length Tests          : PASS
+# Address Tests         : PASS
+# Data Integrity        : PASS
+# Adaptive UP           : PASS
+# Adaptive DOWN         : PASS
+# Saturation            : PASS
+# Independent Adapt     : PASS
+# RR Fairness           : PASS
+# PMU Verification      : PASS
+# PMU Clear             : PASS
+# Stress Test           : PASS
+# 
+# ================================================
+# 
+# ** Note: $finish    : C:/Users/user/4-Channel-Adaptive-Burst-DMA-Controller-with-Hardware-Performance-Monitoring/tb/tb_dma_final.v(1101)
+#    Time: 256475 ns  Iteration: 1  Instance: /tb_dma_final
+# End time: 13:46:36 on Sep 19,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+

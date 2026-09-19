@@ -1,0 +1,13 @@
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+Start time: 13:46:24 on Sep 19,2026
+vlog -work C:\Users\user\AppData\Local\Temp\opencode\dma_sim\work C:\Users\user\4-Channel-Adaptive-Burst-DMA-Controller-with-Hardware-Performance-Monitoring\rtl\dma_final.v C:\Users\user\4-Channel-Adaptive-Burst-DMA-Controller-with-Hardware-Performance-Monitoring\tb\tb_dma_final.v 
+-- Compiling module dma_channel_final
+-- Compiling module dma_arbiter_final
+-- Compiling module dma_final
+-- Compiling module tb_dma_final
+
+Top level modules:
+	tb_dma_final
+End time: 13:46:25 on Sep 19,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+
