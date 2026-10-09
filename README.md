@@ -20,6 +20,12 @@ The top-level module is `dma_final`. It connects the host configuration interfac
 | Adaptive burst controller | Inside each `dma_channel_final` | Adjusts a channel's burst level at transfer-burst boundaries |
 | Performance monitoring | Inside `dma_final` | Counts cycles, busy cycles, words, completed bursts, grants, and per-channel transfer activity |
 
+## Circuit-Style Block Netlist
+
+The diagram below presents the DMA as interconnected hardware blocks, registers, multiplexers, and control paths. It is a circuit-style functional schematic, not a post-synthesis standard-cell netlist; signal routing and bus groupings should be checked against the RTL before being treated as implementation-exact.
+
+![Circuit-style block netlist of the 4-channel adaptive burst DMA](images/architecture/dma_circuit_style.svg)
+
 ## Gate-Level Logic Architecture
 
 The following diagram decomposes the RTL into the sequential registers and combinational logic that synthesis will map into standard cells. It is a **logic-level architectural view**, not a post-synthesis gate netlist; actual cell-level connectivity and gate counts depend on the target library and synthesis constraints.
