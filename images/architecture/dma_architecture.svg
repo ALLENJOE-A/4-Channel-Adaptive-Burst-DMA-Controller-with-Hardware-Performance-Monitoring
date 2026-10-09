@@ -40,21 +40,19 @@
   <text x="361" y="160" text-anchor="middle" class="small">CSR</text>
 
   <rect x="1000" y="112" width="380" height="125" class="block" fill="#edf1f7"/>
-  <text x="1025" y="143" class="heading">Top-Level Integration</text>
-  <text x="1025" y="172" class="body">dma_final</text>
-  <text x="1025" y="193" class="body">Channel integration, bus selection, counters</text>
-  <text x="1025" y="214" class="body">Active-low reset: rst_n</text>
-  <path d="M795 174 H987" class="wire" marker-end="url(#arrow)"/>
-  <text x="890" y="160" text-anchor="middle" class="small">configuration / status</text>
+  <text x="1025" y="143" class="heading">Clock &amp; Reset</text>
+  <text x="1025" y="172" class="body">clk: common controller clock</text>
+  <text x="1025" y="193" class="body">rst_n: active-low asynchronous reset</text>
+  <text x="1025" y="214" class="body">Used by channels, arbiter and PMU</text>
 
   <!-- Channel array -->
   <rect x="50" y="285" width="1340" height="255" rx="18" fill="#ffffff" stroke="#b5c7d8" stroke-width="1.6"/>
   <text x="76" y="316" class="heading">Four Independent DMA Channel Engines</text>
   <text x="1360" y="316" text-anchor="end" class="small">4 × dma_channel_final</text>
 
-  <path d="M600 237 V263 H720 V277" class="wire" marker-end="url(#arrow)"/>
-  <path d="M720 263 H190 V352" class="wire" opacity=".7"/>
-  <path d="M470 263 V352 M750 263 V352 M1030 263 V352" class="wire" marker-end="url(#arrow)" opacity=".7"/>
+  <path d="M600 237 V326" class="wire"/>
+  <path d="M215 326 H1192" class="wire"/>
+  <path d="M215 326 V334 M530 326 V334 M845 326 V334 M1192 326 V334" class="wire" marker-end="url(#arrow)" opacity=".8"/>
 
   <!-- Channel 0 -->
   <rect x="75" y="340" width="280" height="174" class="block" fill="#e6f4ed"/>
@@ -145,9 +143,8 @@
   <text x="390" y="821" class="heading">Performance Monitoring Unit (PMU)</text>
   <text x="390" y="850" class="body">Global counters: total cycles, busy cycles, words, bursts, grants</text>
   <text x="390" y="874" class="body">Per-channel word and burst counters; decoded current burst size</text>
-  <text x="390" y="898" class="body">Memory-mapped readback • PMU clear at 0x94 • adaptive mode at 0x98</text>
-  <path d="M1000 850 H1080 V240 H1190" class="monitor" marker-end="url(#arrowDash)"/>
-  <text x="1090" y="835" class="small">counter readback / control</text>
+  <text x="390" y="898" class="body">Host-readable counters • PMU clear at 0x94 • adaptive mode at 0x98</text>
+  <path d="M360 855 H28 V174 H51" class="monitor" marker-end="url(#arrowDash)"/>
 
   <!-- Legend -->
   <line x1="1070" y1="810" x2="1115" y2="810" class="wire" marker-end="url(#arrow)"/>
