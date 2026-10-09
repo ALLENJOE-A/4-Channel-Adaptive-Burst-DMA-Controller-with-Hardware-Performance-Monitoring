@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120">
+<defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#172033}.title{font-size:27px;font-weight:700}.region{font-size:20px;font-weight:700}.label{font-size:15px}.small{font-size:12px}.block{fill:#fff;stroke:#334155;stroke-width:2}.reg{fill:#eaf2ff;stroke:#2563eb;stroke-width:1.7}.logic{fill:#f3e8ff;stroke:#9333ea;stroke-width:1.7}.control{fill:#fff1e6;stroke:#c2410c;stroke-width:1.7}.wire{fill:none;stroke:#2563eb;stroke-width:2}.ctl{fill:none;stroke:#c2410c;stroke-width:2}.data{fill:none;stroke:#15803d;stroke-width:2}.mon{fill:none;stroke:#9333ea;stroke-width:2}.regionbox{fill:#f8fafc;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:8 5}.pin{font-size:12px;fill:#334155}
+</style><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#334155"/></marker></defs>
+<rect width="1600" height="1120" fill="#ffffff"/>
+<text x="800" y="40" text-anchor="middle" class="title">4-Channel Adaptive Burst DMA Controller — Circuit-Style Block Netlist</text>
+<text x="800" y="64" text-anchor="middle" class="small">RTL-derived functional schematic • buses and block boundaries are illustrative, not a synthesized cell netlist</text>
+<!-- config -->
+<rect x="28" y="90" width="1544" height="155" rx="10" class="regionbox"/>
+<text x="800" y="116" text-anchor="middle" class="region">Configuration / Status Register Bank</text>
+<rect x="55" y="140" width="180" height="72" rx="5" class="control"/><text x="145" y="168" text-anchor="middle" class="label">Address Decoder</text><text x="145" y="188" text-anchor="middle" class="label">&amp; CSR Control</text>
+<path d="M10 158 H55 M10 180 H55 M10 202 H55" class="wire" marker-end="url(#arr)"/><text x="12" y="148" class="small">cfg_addr / cfg_wdata</text>
+<rect x="285" y="137" width="260" height="78" rx="4" class="reg"/><text x="415" y="159" text-anchor="middle" class="label">Channel 0 Registers</text><text x="415" y="180" text-anchor="middle" class="small">SRC · DST · LEN · BURST · CTRL</text><text x="415" y="199" text-anchor="middle" class="small">STATUS</text>
+<rect x="615" y="137" width="260" height="78" rx="4" class="reg"/><text x="745" y="159" text-anchor="middle" class="label">Channel 1 Registers</text><text x="745" y="180" text-anchor="middle" class="small">SRC · DST · LEN · BURST · CTRL</text><text x="745" y="199" text-anchor="middle" class="small">STATUS</text>
+<rect x="945" y="137" width="260" height="78" rx="4" class="reg"/><text x="1075" y="159" text-anchor="middle" class="label">Channel 2 Registers</text><text x="1075" y="180" text-anchor="middle" class="small">SRC · DST · LEN · BURST · CTRL</text><text x="1075" y="199" text-anchor="middle" class="small">STATUS</text>
+<rect x="1275" y="137" width="260" height="78" rx="4" class="reg"/><text x="1405" y="159" text-anchor="middle" class="label">Channel 3 Registers</text><text x="1405" y="180" text-anchor="middle" class="small">SRC · DST · LEN · BURST · CTRL</text><text x="1405" y="199" text-anchor="middle" class="small">STATUS</text>
+<path d="M235 176 H285 M235 176 V125 H1405 V137 M415 125 V137 M745 125 V137 M1075 125 V137" class="wire"/>
+<!-- channels -->
+<rect x="28" y="280" width="365" height="435" rx="9" class="regionbox"/><text x="210" y="309" text-anchor="middle" class="region">DMA Channel 0</text>
+<rect x="46" y="335" width="104" height="52" rx="5" class="logic"/><text x="98" y="357" text-anchor="middle" class="label">FSM</text><text x="98" y="375" text-anchor="middle" class="small">state[2:0]</text>
+<rect x="173" y="335" width="94" height="52" rx="5" class="reg"/><text x="220" y="356" text-anchor="middle" class="label">SRC_ADDR</text><text x="220" y="374" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="278" y="335" width="96" height="52" rx="5" class="reg"/><text x="326" y="356" text-anchor="middle" class="label">DST_ADDR</text><text x="326" y="374" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="46" y="414" width="104" height="52" rx="5" class="reg"/><text x="98" y="436" text-anchor="middle" class="label">REM_LEN</text><text x="98" y="454" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="173" y="414" width="94" height="52" rx="5" class="reg"/><text x="220" y="436" text-anchor="middle" class="label">BURST_CNT</text><text x="220" y="454" text-anchor="middle" class="small">5-bit reg</text>
+<rect x="278" y="414" width="96" height="52" rx="5" class="logic"/><text x="326" y="436" text-anchor="middle" class="label">READ_DATA</text><text x="326" y="454" text-anchor="middle" class="small">32-bit buffer</text>
+<rect x="46" y="500" width="150" height="62" rx="5" class="control"/><text x="121" y="523" text-anchor="middle" class="label">Adaptive Burst</text><text x="121" y="542" text-anchor="middle" class="label">Score / Level</text><text x="121" y="555" text-anchor="middle" class="small">4-bit score, 2-bit level</text>
+<rect x="218" y="500" width="156" height="62" rx="5" class="logic"/><text x="296" y="523" text-anchor="middle" class="label">Burst Decode</text><text x="296" y="543" text-anchor="middle" class="small">1 / 4 / 8 / 16 words</text>
+<rect x="46" y="597" width="328" height="72" rx="5" class="block"/><text x="210" y="620" text-anchor="middle" class="label">Next-State / Output Decode</text><text x="210" y="642" text-anchor="middle" class="small">req · grant · mem_valid · mem_ready</text><text x="210" y="658" text-anchor="middle" class="small">mem_read_en · mem_write_en · burst_done</text>
+<path d="M98 387 V400 H98 V414 M220 387 V405 H220 V414 M326 387 V414 M121 500 V480 H98 V466 M196 531 H218 M296 562 V580 H210 V597 M98 466 V585 H98 V597 M326 466 V580" class="wire"/>
+<path d="M98 387 V397 H98 V335" class="ctl" opacity=".5"/>
+<text x="210" y="697" text-anchor="middle" class="small">clk / rst_n shared</text><rect x="418" y="280" width="365" height="435" rx="9" class="regionbox"/><text x="600" y="309" text-anchor="middle" class="region">DMA Channel 1</text>
+<rect x="436" y="335" width="104" height="52" rx="5" class="logic"/><text x="488" y="357" text-anchor="middle" class="label">FSM</text><text x="488" y="375" text-anchor="middle" class="small">state[2:0]</text>
+<rect x="563" y="335" width="94" height="52" rx="5" class="reg"/><text x="610" y="356" text-anchor="middle" class="label">SRC_ADDR</text><text x="610" y="374" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="668" y="335" width="96" height="52" rx="5" class="reg"/><text x="716" y="356" text-anchor="middle" class="label">DST_ADDR</text><text x="716" y="374" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="436" y="414" width="104" height="52" rx="5" class="reg"/><text x="488" y="436" text-anchor="middle" class="label">REM_LEN</text><text x="488" y="454" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="563" y="414" width="94" height="52" rx="5" class="reg"/><text x="610" y="436" text-anchor="middle" class="label">BURST_CNT</text><text x="610" y="454" text-anchor="middle" class="small">5-bit reg</text>
+<rect x="668" y="414" width="96" height="52" rx="5" class="logic"/><text x="716" y="436" text-anchor="middle" class="label">READ_DATA</text><text x="716" y="454" text-anchor="middle" class="small">32-bit buffer</text>
+<rect x="436" y="500" width="150" height="62" rx="5" class="control"/><text x="511" y="523" text-anchor="middle" class="label">Adaptive Burst</text><text x="511" y="542" text-anchor="middle" class="label">Score / Level</text><text x="511" y="555" text-anchor="middle" class="small">4-bit score, 2-bit level</text>
+<rect x="608" y="500" width="156" height="62" rx="5" class="logic"/><text x="686" y="523" text-anchor="middle" class="label">Burst Decode</text><text x="686" y="543" text-anchor="middle" class="small">1 / 4 / 8 / 16 words</text>
+<rect x="436" y="597" width="328" height="72" rx="5" class="block"/><text x="600" y="620" text-anchor="middle" class="label">Next-State / Output Decode</text><text x="600" y="642" text-anchor="middle" class="small">req · grant · mem_valid · mem_ready</text><text x="600" y="658" text-anchor="middle" class="small">mem_read_en · mem_write_en · burst_done</text>
+<path d="M488 387 V400 H488 V414 M610 387 V405 H610 V414 M716 387 V414 M511 500 V480 H488 V466 M586 531 H608 M686 562 V580 H600 V597 M488 466 V585 H488 V597 M716 466 V580" class="wire"/>
+<path d="M488 387 V397 H488 V335" class="ctl" opacity=".5"/>
+<text x="600" y="697" text-anchor="middle" class="small">clk / rst_n shared</text><rect x="808" y="280" width="365" height="435" rx="9" class="regionbox"/><text x="990" y="309" text-anchor="middle" class="region">DMA Channel 2</text>
+<rect x="826" y="335" width="104" height="52" rx="5" class="logic"/><text x="878" y="357" text-anchor="middle" class="label">FSM</text><text x="878" y="375" text-anchor="middle" class="small">state[2:0]</text>
+<rect x="953" y="335" width="94" height="52" rx="5" class="reg"/><text x="1000" y="356" text-anchor="middle" class="label">SRC_ADDR</text><text x="1000" y="374" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="1058" y="335" width="96" height="52" rx="5" class="reg"/><text x="1106" y="356" text-anchor="middle" class="label">DST_ADDR</text><text x="1106" y="374" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="826" y="414" width="104" height="52" rx="5" class="reg"/><text x="878" y="436" text-anchor="middle" class="label">REM_LEN</text><text x="878" y="454" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="953" y="414" width="94" height="52" rx="5" class="reg"/><text x="1000" y="436" text-anchor="middle" class="label">BURST_CNT</text><text x="1000" y="454" text-anchor="middle" class="small">5-bit reg</text>
+<rect x="1058" y="414" width="96" height="52" rx="5" class="logic"/><text x="1106" y="436" text-anchor="middle" class="label">READ_DATA</text><text x="1106" y="454" text-anchor="middle" class="small">32-bit buffer</text>
+<rect x="826" y="500" width="150" height="62" rx="5" class="control"/><text x="901" y="523" text-anchor="middle" class="label">Adaptive Burst</text><text x="901" y="542" text-anchor="middle" class="label">Score / Level</text><text x="901" y="555" text-anchor="middle" class="small">4-bit score, 2-bit level</text>
+<rect x="998" y="500" width="156" height="62" rx="5" class="logic"/><text x="1076" y="523" text-anchor="middle" class="label">Burst Decode</text><text x="1076" y="543" text-anchor="middle" class="small">1 / 4 / 8 / 16 words</text>
+<rect x="826" y="597" width="328" height="72" rx="5" class="block"/><text x="990" y="620" text-anchor="middle" class="label">Next-State / Output Decode</text><text x="990" y="642" text-anchor="middle" class="small">req · grant · mem_valid · mem_ready</text><text x="990" y="658" text-anchor="middle" class="small">mem_read_en · mem_write_en · burst_done</text>
+<path d="M878 387 V400 H878 V414 M1000 387 V405 H1000 V414 M1106 387 V414 M901 500 V480 H878 V466 M976 531 H998 M1076 562 V580 H990 V597 M878 466 V585 H878 V597 M1106 466 V580" class="wire"/>
+<path d="M878 387 V397 H878 V335" class="ctl" opacity=".5"/>
+<text x="990" y="697" text-anchor="middle" class="small">clk / rst_n shared</text><rect x="1198" y="280" width="365" height="435" rx="9" class="regionbox"/><text x="1380" y="309" text-anchor="middle" class="region">DMA Channel 3</text>
+<rect x="1216" y="335" width="104" height="52" rx="5" class="logic"/><text x="1268" y="357" text-anchor="middle" class="label">FSM</text><text x="1268" y="375" text-anchor="middle" class="small">state[2:0]</text>
+<rect x="1343" y="335" width="94" height="52" rx="5" class="reg"/><text x="1390" y="356" text-anchor="middle" class="label">SRC_ADDR</text><text x="1390" y="374" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="1448" y="335" width="96" height="52" rx="5" class="reg"/><text x="1496" y="356" text-anchor="middle" class="label">DST_ADDR</text><text x="1496" y="374" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="1216" y="414" width="104" height="52" rx="5" class="reg"/><text x="1268" y="436" text-anchor="middle" class="label">REM_LEN</text><text x="1268" y="454" text-anchor="middle" class="small">32-bit reg</text>
+<rect x="1343" y="414" width="94" height="52" rx="5" class="reg"/><text x="1390" y="436" text-anchor="middle" class="label">BURST_CNT</text><text x="1390" y="454" text-anchor="middle" class="small">5-bit reg</text>
+<rect x="1448" y="414" width="96" height="52" rx="5" class="logic"/><text x="1496" y="436" text-anchor="middle" class="label">READ_DATA</text><text x="1496" y="454" text-anchor="middle" class="small">32-bit buffer</text>
+<rect x="1216" y="500" width="150" height="62" rx="5" class="control"/><text x="1291" y="523" text-anchor="middle" class="label">Adaptive Burst</text><text x="1291" y="542" text-anchor="middle" class="label">Score / Level</text><text x="1291" y="555" text-anchor="middle" class="small">4-bit score, 2-bit level</text>
+<rect x="1388" y="500" width="156" height="62" rx="5" class="logic"/><text x="1466" y="523" text-anchor="middle" class="label">Burst Decode</text><text x="1466" y="543" text-anchor="middle" class="small">1 / 4 / 8 / 16 words</text>
+<rect x="1216" y="597" width="328" height="72" rx="5" class="block"/><text x="1380" y="620" text-anchor="middle" class="label">Next-State / Output Decode</text><text x="1380" y="642" text-anchor="middle" class="small">req · grant · mem_valid · mem_ready</text><text x="1380" y="658" text-anchor="middle" class="small">mem_read_en · mem_write_en · burst_done</text>
+<path d="M1268 387 V400 H1268 V414 M1390 387 V405 H1390 V414 M1496 387 V414 M1291 500 V480 H1268 V466 M1366 531 H1388 M1466 562 V580 H1380 V597 M1268 466 V585 H1268 V597 M1496 466 V580" class="wire"/>
+<path d="M1268 387 V397 H1268 V335" class="ctl" opacity=".5"/>
+<text x="1380" y="697" text-anchor="middle" class="small">clk / rst_n shared</text>
+<!-- config links -->
+<path d="M415 215 V260 H210 V335 M745 215 V260 H600 V335 M1075 215 V260 H990 V335 M1405 215 V260 H1380 V335" class="ctl"/>
+<!-- arbiter -->
+<rect x="485" y="755" width="630" height="100" rx="8" class="control"/><text x="800" y="783" text-anchor="middle" class="region">Round-Robin Arbiter</text><text x="800" y="808" text-anchor="middle" class="label">req[3:0] → priority / last_grant[1:0] → grant[3:0]</text><text x="800" y="832" text-anchor="middle" class="small">Bus-lock control uses active burst state</text>
+<path d="M210 715 V738 H540 V755 M600 715 V732 H680 V755 M990 715 V732 H850 V755 M1380 715 V738 H1060 V755" class="ctl"/>
+<!-- shared interface -->
+<rect x="180" y="900" width="900" height="150" rx="8" class="regionbox"/><text x="630" y="925" text-anchor="middle" class="region">Shared Memory Interface</text>
+<rect x="215" y="950" width="140" height="62" rx="5" class="logic"/><text x="285" y="974" text-anchor="middle" class="label">4:1 Address</text><text x="285" y="993" text-anchor="middle" class="label">MUX</text>
+<rect x="405" y="950" width="140" height="62" rx="5" class="logic"/><text x="475" y="974" text-anchor="middle" class="label">4:1 Write-Data</text><text x="475" y="993" text-anchor="middle" class="label">MUX</text>
+<rect x="605" y="950" width="180" height="62" rx="5" class="control"/><text x="695" y="974" text-anchor="middle" class="label">Memory Control</text><text x="695" y="993" text-anchor="middle" class="label">/ Handshake</text>
+<rect x="845" y="950" width="190" height="62" rx="5" class="reg"/><text x="940" y="974" text-anchor="middle" class="label">Read-Data Register</text><text x="940" y="993" text-anchor="middle" class="small">mem_rdata[31:0]</text>
+<path d="M800 855 V880 H285 V950 M800 880 H475 V950 M800 880 H695 V950 M785 981 H845" class="wire" marker-end="url(#arr)"/>
+<path d="M355 981 H605 M545 995 H605" class="data" marker-end="url(#arr)"/>
+<path d="M1080 985 H1190" class="wire" marker-end="url(#arr)"/><text x="1200" y="962" class="label">mem_addr[31:0]</text><text x="1200" y="985" class="label">mem_wdata[31:0]</text><text x="1200" y="1008" class="label">mem_read / mem_write</text><text x="1200" y="1031" class="label">mem_valid / mem_ready</text>
+<rect x="1180" y="900" width="380" height="150" rx="8" fill="#fff7ed" stroke="#c2410c" stroke-width="1.8"/><text x="1370" y="938" text-anchor="middle" class="region">External Memory / SoC</text><text x="1370" y="965" text-anchor="middle" class="region">Interconnect</text><text x="1370" y="1000" text-anchor="middle" class="small">Handshake memory bus</text>
+<!-- PMU -->
+<rect x="1140" y="755" width="420" height="100" rx="8" fill="#faf5ff" stroke="#9333ea" stroke-width="1.8"/><text x="1350" y="781" text-anchor="middle" class="region">Performance Monitoring Unit</text><text x="1350" y="808" text-anchor="middle" class="label">Cycle Counter · Word Counter</text><text x="1350" y="831" text-anchor="middle" class="label">Burst Counter · Grant / Per-Channel Counters</text>
+<path d="M1380 715 V738 H1350 V755" class="mon"/><path d="M1350 855 V875 H940 V950" class="mon"/>
+<!-- legend -->
+<line x1="45" y1="1080" x2="95" y2="1080" class="wire"/><text x="105" y="1085" class="small">Data / bus</text><line x1="220" y1="1080" x2="270" y2="1080" class="ctl"/><text x="280" y="1085" class="small">Control / handshake</text><line x1="450" y1="1080" x2="500" y2="1080" class="mon"/><text x="510" y="1085" class="small">Monitoring</text><text x="1550" y="1085" text-anchor="end" class="small">Conceptual block-level schematic; validate signal paths against RTL before publication.</text>
+</svg>
