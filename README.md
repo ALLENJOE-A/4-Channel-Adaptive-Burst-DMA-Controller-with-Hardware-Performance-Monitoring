@@ -20,6 +20,12 @@ The top-level module is `dma_final`. It connects the host configuration interfac
 | Adaptive burst controller | Inside each `dma_channel_final` | Adjusts a channel's burst level at transfer-burst boundaries |
 | Performance monitoring | Inside `dma_final` | Counts cycles, busy cycles, words, completed bursts, grants, and per-channel transfer activity |
 
+## Gate-Level Logic Architecture
+
+The following diagram decomposes the RTL into the sequential registers and combinational logic that synthesis will map into standard cells. It is a **logic-level architectural view**, not a post-synthesis gate netlist; actual cell-level connectivity and gate counts depend on the target library and synthesis constraints.
+
+![Conceptual gate-level DMA logic architecture](images/architecture/dma_gate_level.svg)
+
 ## Transfer datapath
 
 Each channel uses a five-state FSM:
